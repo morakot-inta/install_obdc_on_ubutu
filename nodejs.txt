@@ -1,0 +1,6 @@
+#REF example for connect with Azure SQL
+https://learn.microsoft.com/en-us/sql/connect/node-js/step-3-proof-of-concept-connecting-to-sql-using-node-js?view=sql-server-ver15
+
+
+#ref https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-nodejs?view=azuresql&tabs=ubuntu
+azure-active-directory-msi-app-service // for manage identity
