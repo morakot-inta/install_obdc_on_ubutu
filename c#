@@ -1,1 +1,19 @@
-https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql
+System.Data.SqlClient ** Not tested yet
+1. vm
+  https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql
+2. app service (not recomment)
+  https://learn.microsoft.com/en-us/dotnet/api/overview/azure/service-to-service-authentication?view=azure-dotnet
+
+
+# ASP.NET via entity framework
+# this article is tested on my lab. 
+# the key word for make it to work are:
+1. create identity on web server
+2. grant premission for manage identity user 
+    CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER;
+    ALTER ROLE db_datareader ADD MEMBER [<identity-name>];
+    ALTER ROLE db_datawriter ADD MEMBER [<identity-name>];
+    ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
+    GO
+3. modify connection string to "Server=tcp:<server-name>.database.windows.net;Authentication=Active Directory Default; Database=<database-name>;"
+https://learn.microsoft.com/en-us/azure/app-service/tutorial-connect-msi-sql-database?tabs=macosclient%2Cefcore%2Cdotnetcore
